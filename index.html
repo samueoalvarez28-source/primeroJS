@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS.1 PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Library</h1>
+            <button class="addbook">Add Book</button>
+        </div>
+        <div class="content">
+
+        </div>
+        <div class="footer">
+            <p>tngiage anigge sa inc©</p>
+        </div>
+    </div>
+</body>
+<script>
+    
+    
+    const myLibrary = [];
+
+function Book(title, author, pages, read) {
+  // the constructor...
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+
+  crypto.randomUUID()
+}
+
+function addBookToLibrary(Book) {
+  // take params, create a book then
+  // store it in the array
+  myLibrary.push(Book);
+}
+
+const libro1 = new Book("the wealthy of nations", "Adam smith", 142, false);
+const libro2 = new Book("Lord of the rings", "ni idea", 3040, true);
+addBookToLibrary(libro1);
+addBookToLibrary(libro2);
+console.log(myLibrary);
+
+</script>
+</html>
