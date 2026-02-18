@@ -16,8 +16,20 @@
             <h1>Library</h1>
             <button class="addbook">Add Book</button>
         </div>
+        <form>
+            <legend>Add Book</legend>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages" name="pages">
+            <label for="read">Read</label>
+            <input type="checkbox" id="read" name="read">
+            <button type="submit">Add Book</button>
+            
+        </form>
         <div class="content">
-
         </div>
         <div class="footer">
             <p>tngiage anigge sa inc©</p>
@@ -25,7 +37,14 @@
     </div>
 </body>
 <script>
-    
+    const addBook = document.querySelector(".addbook");
+    const form = document.querySelector("form");
+    const content = document.querySelector(".content");
+
+    addBook.addEventListener("click", () => {
+        
+
+    })
     
     const myLibrary = [];
 
@@ -35,8 +54,7 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
-  crypto.randomUUID()
+  this.id = crypto.randomUUID()
 }
 
 function addBookToLibrary(Book) {

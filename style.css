@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box
 }
+body{
+    font-family: "Roboto", sans-serif;
+}
 .container{
     display:grid;
     grid-template-columns: 100%;
@@ -17,6 +20,9 @@
     padding: 20px;
     align-items: center;
     
+}
+h1{
+    font-size: 50px;
 }
 button{
         border-radius: 10px;
@@ -38,5 +44,32 @@ button{
     justify-content: center;
     align-items: center
 
+
+}
+form{
+    position: fixed;
+    background-color: rgb(207, 133, 81);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items:center;
+    height: 350px;
+    width: 500px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    legend{
+        font-size: 30px;
+    
+    }
+
+}
+input{
+    border-radius: 10px;
+    border: none;
+    width: 400px;
+    height: 30px;
 
 }
