@@ -30,6 +30,7 @@
             
         </form>
         <div class="content">
+            
         </div>
         <div class="footer">
             <p>tngiage anigge sa inc©</p>
@@ -42,8 +43,22 @@
     const content = document.querySelector(".content");
 
     addBook.addEventListener("click", () => {
+        form.style.display = "flex";
         
-
+    })
+    form.addEventListener("submit", (e)=>{
+        
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        const pages = document.getElementById("pages").value;
+        const read = document.getElementById("read").checked;
+        const book = document.createElement("div");
+        myLibrary.push(new Book(title, author, pages, read));
+        console.log(myLibrary);
+        book.classList.add("book");
+        e.preventDefault();
+        form.style.display = "none";
+        render(book);
     })
     
     const myLibrary = [];
@@ -55,6 +70,37 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
   this.id = crypto.randomUUID()
+}
+
+function render(){
+  content.innerHTML = "";
+  myLibrary.forEach((book) => {
+    const bookElement = document.createElement("div");
+    content.appendChild(bookElement);
+    bookElement.classList.add("book");
+    bookElement.style.display = "flex";
+    const ptitulo = document.createElement("p");
+    ptitulo.textContent = "Title: "+book.title;
+    bookElement.appendChild(ptitulo);
+    const pauthor = document.createElement("p");
+    pauthor.textContent = "Author: "+book.author;
+    bookElement.appendChild(pauthor);
+    const ppages = document.createElement("p");
+    ppages.textContent = "Book pages: "+ book.pages;
+    bookElement.appendChild(ppages);
+    const pread = document.createElement("input");
+    pread.type = "checkbox";
+    pread.checked = book.read;
+    bookElement.appendChild(pread);
+    const button = document.createElement("button");
+    button.textContent = "Remove";
+    bookElement.appendChild(button);
+    button.addEventListener("click", () => {
+      bookElement.remove();
+      myLibrary.splice(myLibrary.indexOf(book), 1)
+    });
+    content.appendChild(bookElement);
+    });
 }
 
 function addBookToLibrary(Book) {

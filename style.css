@@ -34,9 +34,11 @@ button{
 .content{
     background-color: rgb(253, 169, 139);
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 250px) ;
+    grid-template-rows: repeat(3, 150px) ;
     gap: 15px;
+    scrollbar-width: none;
+    
 }
 .footer{
     background-color: coral;
@@ -59,7 +61,7 @@ form{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
+    display:none;
     legend{
         font-size: 30px;
     
@@ -71,5 +73,20 @@ input{
     border: none;
     width: 400px;
     height: 30px;
+
+}
+.book{
+    background-color: rgb(156, 139, 253);
+    width: 1fr;
+    height: 1fr;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: inherit;
+    :hover{
+        background-color: lightskyblue;
+    }
 
 }
